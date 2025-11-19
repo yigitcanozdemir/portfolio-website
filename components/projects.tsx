@@ -1,34 +1,41 @@
+'use client'
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { projectDemoLinks, imagePaths } from "@/data/externalLinks"
+import { sectionFadeProps, fadeInUp } from "@/lib/motionConfigs"
 
 const projects = [
   {
-    title: "E-Commerce AI Agent",
+    title: "AI Chat Assistant",
     description:
-      "An AI-powered assistant that helps users find products, answer queries, and makes automatic order prcessing.",
+      "Enterprise-grade conversational AI platform with multi-modal capabilities and real-time streaming.",
     image: imagePaths.eCommerceAgent,
     demoUrl: projectDemoLinks.eCommerceAgent,
-    tags: ["OpenAI", "Next.js", "TypeScript"],
+    tags: ["OpenAI", "Next.js", "TypeScript", "Vercel AI SDK"],
   },
   {
-    title: "CineSearch",
-    description: "A movie search platform leveraging GPT to provide detailed movie information and recommendations based on user queries.",
+    title: "Document Intelligence System",
+    description: "Automated document processing and analysis using vision models and natural language understanding.",
     image: imagePaths.cinesearch,
     demoUrl: projectDemoLinks.cinesearch,
-    tags: ["GPT", "Python"],
+    tags: ["GPT-4V", "Python", "FastAPI", "PostgreSQL"],
   },
 ]
 
 export default function Projects() {
   return (
     <section id="projects" className="py-16 bg-[#dff2f2] scroll-mt-20">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center text-primary">My Projects</h2>
+      <motion.div {...sectionFadeProps} className="container mx-auto px-6">
+        <motion.h2 className="text-3xl font-bold mb-12 text-center text-primary" {...fadeInUp()}>
+          My Projects
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
+              {...fadeInUp(index * 0.1)}
             >
               <div className="relative h-44">
                 <Image src={project.image || imagePaths.projectPlaceholder} alt={project.title} fill className="object-cover" />
@@ -52,10 +59,10 @@ export default function Projects() {
                   View Live Demo
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

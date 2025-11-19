@@ -1,3 +1,8 @@
+'use client'
+
+import { motion } from "framer-motion"
+import { sectionFadeProps, fadeInUp } from "@/lib/motionConfigs"
+
 const skills = [
   { name: "Python", level: 95 },
   { name: "TensorFlow & PyTorch", level: 90 },
@@ -27,40 +32,53 @@ const additionalSkills = [
 export default function Skills() {
   return (
     <section id="skills" className="py-24 bg-tertiary text-primary scroll-mt-20">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-16 text-center">My Skills</h2>
+      <motion.div {...sectionFadeProps} className="container mx-auto px-6">
+        <motion.h2 className="text-3xl font-bold mb-16 text-center" {...fadeInUp()}>
+          My Skills
+        </motion.h2>
         
-        <div className="max-w-5xl mx-auto mb-16">
+        {/* Core Skills with Progress Bars */}
+        <motion.div className="max-w-5xl mx-auto mb-16" {...fadeInUp(0.1)}>
           <h3 className="text-2xl font-bold mb-8 text-center">Core Expertise</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skills.map((skill, index) => (
-              <div key={index} className="mb-2">
+              <motion.div key={index} className="mb-2" {...fadeInUp(index * 0.05)}>
                 <div className="flex justify-between mb-2">
                   <span className="font-semibold text-lg">{skill.name}</span>
                   <span className="font-medium">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-primary/30 rounded-full h-3">
-                  <div className="bg-primary h-3 rounded-full transition-all" style={{ width: `${skill.level}%` }}></div>
+                <div className="w-full bg-primary/30 rounded-full h-3 overflow-hidden">
+                  <motion.div
+                    className="bg-primary h-3 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 1.1, ease: "easeOut", delay: index * 0.05 }}
+                  />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <motion.div className="max-w-5xl mx-auto" {...fadeInUp(0.2)}>
           <h3 className="text-2xl font-bold mb-8 text-center">Additional Skills</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {additionalSkills.map((skill, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-primary/10 px-4 py-3 rounded-lg text-center font-medium transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: index * 0.03 }}
               >
                 {skill}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

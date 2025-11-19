@@ -3,7 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Color Palette */
+  /* Premium Color Palette */
   --background: #ffffff;
   --foreground: #111827;
   --card: #ffffff;
@@ -83,5 +83,45 @@
   }
   body {
     @apply bg-quaternary text-primary;
+  }
+
+  /* Custom scrollbar with subtle gray color like ChatGPT/Claude, slightly thicker width, transparent background that shows underlying section colors */
+  /* Webkit browsers (Chrome, Edge, Safari) */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+    background-clip: padding-box;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+
+  /* Custom text selection styling with turquoise theme */
+  ::selection {
+    background-color: #6ec7c7;
+    color: #0d4f4f;
+  }
+
+  ::-moz-selection {
+    background-color: #6ec7c7;
+    color: #0d4f4f;
   }
 }

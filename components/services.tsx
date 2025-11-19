@@ -1,4 +1,8 @@
+'use client'
+
 import { Brain, Code, Sparkles, Database, Zap, LineChart } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { sectionFadeProps, fadeInUp } from '@/lib/motionConfigs'
 
 export default function Services() {
   const services = [
@@ -72,14 +76,18 @@ export default function Services() {
 
   return (
     <section id="services" className="py-16 bg-secondary text-quaternary scroll-mt-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Services</h2>
-          <p className="text-xl text-quaternary/80">What I Offer</p>
-        </div>
+      <motion.div {...sectionFadeProps} className="container mx-auto px-6">
+        <motion.div className="text-center mb-12" {...fadeInUp()}>
+          <h2 className="text-3xl font-bold mb-4 text-tertiary">Services</h2>
+          <p className="text-xl text-tertiary">What I Offer</p>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="bg-primary p-8 rounded-xl transition-all">
+            <motion.div
+              key={index}
+              className="bg-primary p-8 rounded-xl transition-all"
+              {...fadeInUp(index * 0.1)}
+            >
               <div className="flex flex-col gap-6">
                 <div className="p-4 bg-tertiary/10 text-tertiary rounded-xl w-fit">
                   {service.icon}
@@ -97,10 +105,10 @@ export default function Services() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

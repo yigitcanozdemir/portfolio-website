@@ -9,7 +9,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'services', 'projects', 'skills', 'about', 'contact']
+      const sections = ['home', 'services', 'projects', 'skills', 'experience', 'about', 'contact']
       const current = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -18,29 +18,33 @@ export default function Header() {
         }
         return false
       })
-      if (current) setActiveSection(current)
+      if (current) {
+        setActiveSection(current)
+      } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        setActiveSection('contact')
+      }
     }
 
-    const smoothScroll = (e: MouseEvent) => {
-      const target = e.target as HTMLAnchorElement
-      if (target.hash) {
+    const smoothScroll = (e: Event) => {
+      const target = e.currentTarget as HTMLAnchorElement | null
+      if (target?.hash) {
         e.preventDefault()
-        const element = document.querySelector(target.hash)
+        const element = document.querySelector<HTMLElement>(target.hash)
         if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-          })
+          const offset = 80
+          const top = element.getBoundingClientRect().top + window.scrollY - offset
+          window.scrollTo({ top, behavior: 'smooth' })
         }
       }
     }
 
     window.addEventListener('scroll', handleScroll)
-    const links = document.querySelectorAll('a[href^="#"]')
-    links.forEach((link) => link.addEventListener("click", smoothScroll as any))
+    const links = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
+    links.forEach((link) => link.addEventListener("click", smoothScroll))
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      links.forEach((link) => link.removeEventListener("click", smoothScroll as any))
+      links.forEach((link) => link.removeEventListener("click", smoothScroll))
     }
   }, [])
 
@@ -62,6 +66,7 @@ export default function Header() {
     { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ]
@@ -78,7 +83,7 @@ export default function Header() {
                 className={`px-5 py-2 rounded-lg text-base font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-tertiary bg-white/10'
-                    : 'text-quaternary/80 hover:text-quaternary hover:bg-white/5'
+                    : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
                 }`}
               >
                 {item.label}
@@ -87,7 +92,7 @@ export default function Header() {
           </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-quaternary"
+            className="md:hidden p-2 text-tertiary"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -103,7 +108,7 @@ export default function Header() {
                 className={`block w-full text-center px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-tertiary bg-white/10'
-                    : 'text-quaternary/80 hover:text-quaternary hover:bg-white/5'
+                    : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
                 }`}
               >
                 {item.label}
