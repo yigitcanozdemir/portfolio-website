@@ -178,3 +178,13 @@
     color: var(--primary);
   }
 }
+
+/* Prevent extensions (e.g., Dark Reader) from inverting colors */
+[data-darkreader-ignore] {
+  color-scheme: light !important;
+}
+
+[data-darkreader-ignore] * {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}

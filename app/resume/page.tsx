@@ -128,7 +128,7 @@ export default function ResumePage() {
                   {coreSkills.map((skill) => (
                     <span
                       key={skill.name}
-                      className="inline-flex items-center rounded-full px-3 py-[6px] text-[11px] leading-tight"
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] leading-tight"
                       style={{ color: accentColor, backgroundColor: badgeBg, borderColor: badgeBorder, borderWidth: 1, borderStyle: "solid" }}
                     >
                       {skill.name}
@@ -144,7 +144,7 @@ export default function ResumePage() {
                   {additionalSkills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center rounded-full px-3 py-[6px] text-[11px] leading-tight"
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] leading-tight"
                       style={{ color: accentColor, backgroundColor: badgeBg, borderColor: badgeBorder, borderWidth: 1, borderStyle: "solid" }}
                     >
                       {skill}

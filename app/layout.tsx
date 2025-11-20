@@ -54,13 +54,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-quaternary text-primary`}>
-      <ThemeProvider>
-        {children}
-        <Analytics />
-        <SpeedInsights />
-      </ThemeProvider>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning data-darkreader-ignore>
+      <head>
+        <meta name="color-scheme" content="light" />
+      </head>
+      <body className={`${inter.className} bg-quaternary text-primary`} data-darkreader-ignore>
+        <ThemeProvider>
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   )

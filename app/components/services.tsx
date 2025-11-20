@@ -1,13 +1,13 @@
 'use client'
 
-import { Brain, Code, Sparkles, Database, Zap, LineChart } from 'lucide-react'
+import { Brain, Bot, Workflow, Server, MonitorSmartphone, Cloud } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { sectionFadeProps, fadeInUp } from '@/lib/motionConfigs'
 
 export default function Services() {
   const services = [
     {
-      icon: <Brain className="w-8 h-8" />,
+      icon: <Bot className="w-8 h-8" />,
       title: "RAG & LLM Systems",
       description:
         "AI that works in the real world. I build robust retrieval and multi-model workflows that integrate reliably into production systems.",
@@ -19,7 +19,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Code className="w-8 h-8" />,
+      icon: <Workflow className="w-8 h-8" />,
       title: "Agentic Automation",
       description:
         "End-to-end agent systems that coordinate multiple LLM calls, tools, APIs, and business logic with deterministic guardrails.",
@@ -31,7 +31,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Database className="w-8 h-8" />,
+      icon: <Server className="w-8 h-8" />,
       title: "Backend & API Engineering",
       description:
         "Fast, stable backend services engineered for AI workloads, designed to run reliably in production environments.",
@@ -43,7 +43,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Sparkles className="w-8 h-8" />,
+      icon: <MonitorSmartphone className="w-8 h-8" />,
       title: "Frontend Development",
       description:
         "Modern, clean Next.js interfaces for AI products, dashboards, internal tools, and end-user applications.",
@@ -55,7 +55,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Zap className="w-8 h-8" />,
+      icon: <Brain className="w-8 h-8" />,
       title: "AI/ML Development",
       description:
         "ML models and pipelines tailored for real-world environments, using robust engineering and validation practices.",
@@ -67,7 +67,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <LineChart className="w-8 h-8" />,
+      icon: <Cloud className="w-8 h-8" />,
       title: "Cloud Deployment",
       description:
         "Reliable production deployments built for performance, stability, and maintainability.",

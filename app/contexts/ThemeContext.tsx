@@ -12,14 +12,11 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("brown")
-
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "brown"
     const savedTheme = localStorage.getItem("portfolio-theme") as Theme
-    if (savedTheme) {
-      setTheme(savedTheme)
-    }
-  }, [])
+    return savedTheme ?? "brown"
+  })
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme)

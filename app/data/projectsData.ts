@@ -19,7 +19,7 @@ export const projects = [
     "Grafana"],
   },
   {
-    title: "CineSearch – Semantic Movie Search Engine",
+    title: "CineSearch – Semantic Title Search Engine",
     description: "A semantic search engine built on 500k cleaned IMDb entries using Qwen embeddings, OpenAI intent parsing and a multi-step ranking pipeline. It understands user preferences such as genre, theme, tone and region to return the most relevant titles.",
     image: imagePaths.cinesearch,
     demoUrl: projectDemoLinks.cinesearch,
