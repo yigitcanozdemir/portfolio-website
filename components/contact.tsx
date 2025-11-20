@@ -92,7 +92,7 @@ export default function Contact() {
           Get In Touch
         </motion.h2>
         <motion.p className="text-lg text-center mb-10 text-tertiary max-w-2xl mx-auto" {...fadeInUp(0.1)}>
-          Ready to start your AI project? Let&rsquo;s discuss how I can help transform your business with intelligent automation.
+          Let’s talk about how AI can power your business and help you build systems that work in the real world
         </motion.p>
         
         <div className="max-w-5xl mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-start">

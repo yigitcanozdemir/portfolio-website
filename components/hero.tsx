@@ -13,7 +13,7 @@ export default function Hero() {
         <motion.div className="md:w-1/2" {...fadeInUp()}>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-tertiary">Yiğit Can Özdemir</h1>
           <h2 className="text-2xl md:text-4xl mb-8 text-tertiary font-semibold">AI Engineer</h2>
-          <p className="text-xl md:text-2xl mb-10 leading-relaxed text-tertiary">Build AI systems that are reliable in real production environments</p>
+          <p className="text-xl md:text-2xl mb-10 leading-relaxed text-tertiary">Building AI systems that works in the real world</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#projects"

@@ -24,17 +24,32 @@ export default function About() {
           </motion.div>
           <motion.div className="md:w-2/3 md:pl-12 space-y-4" {...fadeInUp(0.15)}>
             <p className="text-tertiary">
-              Hi, I&rsquo;m Yiğit Can Özdemir, a passionate freelance AI engineer with extensive experience in
-              creating intelligent, functional, and production-ready AI systems.
+              I help startups and businesses turn their AI ideas into reliable, production-ready systems. My focus is on 
+              practical, real-world solutions built with RAG pipelines, LLM integration, and agentic workflows that support 
+              actual users and day-to-day operations.
             </p>
+
             <p className="text-tertiary">
-              I specialize in building AI-powered applications using modern technologies like LangChain,
-              OpenAI, Anthropic, and cutting-edge ML frameworks. My background in both AI/ML and full-stack development allows me to bridge the gap between
-              research and production, ensuring that the systems I create not only perform exceptionally but are also maintainable and scalable.
+              Over the past years, I’ve designed retrieval systems with PostgreSQL, Redis and pgvector, integrated LLMs like 
+              OpenAI, Claude and open-source models into backend workflows, developed FastAPI services, deployed applications 
+              on AWS with Docker and created clean interfaces with Next.js for end-to-end delivery.
             </p>
+
             <p className="text-tertiary">
-              When I&rsquo;m not building AI systems, you can find me exploring new AI models and frameworks,
-              contributing to open-source projects, or sharing my knowledge through the tech community.
+              Before freelancing, I worked as an AI Engineer in industrial automation where I built predictive maintenance 
+              models, computer vision tools and real-time monitoring dashboards for steel production lines. Working in this 
+              environment taught me how to design AI systems that stay stable under noisy data, strict uptime requirements 
+              and real operational constraints.
+            </p>
+
+            <p className="text-tertiary">
+              My approach is straightforward: use LLMs where they bring real value, keep the core logic deterministic and 
+              observable and ensure the system remains maintainable long after deployment.
+            </p>
+
+            <p className="text-tertiary">
+              If you’re a business looking to bring AI into real operations, I’d be glad to talk. We can explore your 
+              challenges and see how reliable RAG systems, LLMs or agentic workflows could help move your business forward.
             </p>
           </motion.div>
         </div>

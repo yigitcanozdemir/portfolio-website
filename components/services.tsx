@@ -8,68 +8,74 @@ export default function Services() {
   const services = [
     {
       icon: <Brain className="w-8 h-8" />,
-      title: "AI/ML Development",
-      description: "Build production-ready AI systems that solve real business problems with measurable impact.",
+      title: "RAG & LLM Systems",
+      description:
+        "AI that works in the real world. I build robust retrieval and multi-model workflows that integrate reliably into production systems.",
       features: [
-        "Custom machine learning model development",
-        "Computer vision and NLP solutions",
-        "Model optimization and deployment",
-        "MLOps pipeline implementation"
+        "RAG pipelines using Redis, PostgreSQL & pgvector",
+        "Multi-step agentic flows with structured control",
+        "Custom evaluation & observability for LLM behavior",
+        "LLM integration for internal workflows & automation"
       ]
     },
     {
       icon: <Code className="w-8 h-8" />,
-      title: "LLM Integration",
-      description: "Integrate powerful language models into your applications with robust error handling and monitoring.",
+      title: "Agentic Automation",
+      description:
+        "End-to-end agent systems that coordinate multiple LLM calls, tools, APIs, and business logic with deterministic guardrails.",
       features: [
-        "GPT, Claude, and Gemini integration",
-        "Custom prompt engineering",
-        "RAG system development",
-        "Agent-based AI architectures"
-      ]
-    },
-    {
-      icon: <Sparkles className="w-8 h-8" />,
-      title: "AI Automation",
-      description: "Automate complex workflows and processes using cutting-edge AI to boost productivity and efficiency.",
-      features: [
-        "Workflow automation with AI agents",
-        "Document processing and analysis",
-        "Intelligent data extraction",
-        "Process optimization consulting"
+        "Multi-LLM orchestrations with fallbacks",
+        "Tool-using agent architectures",
+        "Task routing, memory & workflow management",
+        "Error-handled, production-safe execution layers"
       ]
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: "Data Engineering",
-      description: "Design and build scalable data infrastructure to power your AI and analytics initiatives.",
+      title: "Backend & API Engineering",
+      description:
+        "Fast, stable backend services engineered for AI workloads, designed to run reliably in production environments.",
       features: [
-        "Data pipeline architecture",
-        "Vector database implementation",
-        "Real-time data processing",
-        "Data warehouse optimization"
+        "FastAPI microservices for AI workloads",
+        "LLM-serving endpoints",
+        "Authentication, rate limiting & monitoring",
+        "AWS-ready Dockerized deployments"
+      ]
+    },
+    {
+      icon: <Sparkles className="w-8 h-8" />,
+      title: "Frontend Development",
+      description:
+        "Modern, clean Next.js interfaces for AI products, dashboards, internal tools, and end-user applications.",
+      features: [
+        "Next.js dashboards & admin panels",
+        "Full-stack AI app delivery",
+        "API integration with LLM/RAG systems",
+        "Responsive UI with smooth UX"
       ]
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "AI API Development",
-      description: "Create fast, scalable APIs that serve AI models with high availability and low latency.",
+      title: "AI/ML Development",
+      description:
+        "ML models and pipelines tailored for real-world environments, using robust engineering and validation practices.",
       features: [
-        "RESTful and GraphQL API design",
-        "Microservices architecture",
-        "Authentication and rate limiting",
-        "API documentation and monitoring"
+        "Predictive modeling (regression, classification, LSTM)",
+        "Computer vision tools with OpenCV",
+        "Real-world data preprocessing & cleaning",
+        "Deployment-ready ML pipelines"
       ]
     },
     {
       icon: <LineChart className="w-8 h-8" />,
-      title: "AI Consulting",
-      description: "Strategic guidance on AI adoption, implementation strategies, and technology stack selection.",
+      title: "Cloud Deployment",
+      description:
+        "Reliable production deployments built for performance, stability, and maintainability.",
       features: [
-        "AI readiness assessment",
-        "Technology stack recommendations",
-        "Implementation roadmap planning",
-        "Team training and knowledge transfer"
+        "AWS deployment with Docker",
+        "Container orchestration",
+        "Load balancing & environment setup",
+        "CI/CD with GitHub Actions"
       ]
     }
   ]
@@ -95,12 +101,9 @@ export default function Services() {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold text-tertiary">{service.title}</h3>
                   <p className="leading-relaxed text-white/90">{service.description}</p>
-                  <ul className="space-y-2 pt-2">
+                  <ul className="pt-2 space-y-2 list-disc list-outside pl-5 text-sm text-white/80 leading-relaxed marker:text-tertiary marker:text-lg">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-tertiary mt-1 shrink-0">●</span>
-                        <span className="text-sm text-white/80">{feature}</span>
-                      </li>
+                      <li key={idx}>{feature}</li>
                     ))}
                   </ul>
                 </div>

@@ -5,28 +5,28 @@ import { sectionFadeProps, fadeInUp } from "@/lib/motionConfigs"
 
 const skills = [
   { name: "Python", level: 95 },
-  { name: "TensorFlow & PyTorch", level: 90 },
-  { name: "LangChain & LlamaIndex", level: 85 },
-  { name: "OpenAI & Anthropic APIs", level: 90 },
-  { name: "Next.js & React", level: 85 },
-  { name: "TypeScript", level: 80 },
-  { name: "FastAPI & Node.js", level: 85 },
-  { name: "PostgreSQL & Vector DBs", level: 80 },
+  { name: "LLM Integration (OpenAI, Anthropic)", level: 90 },
+  { name: "RAG Systems & Vector Search", level: 80 },
+  { name: "Agentic Workflow Design", level: 80 },
+  { name: "FastAPI & Backend Engineering", level: 80 },
+  { name: "Next.js & Frontend Delivery", level: 65 },
+  { name: "Docker & AWS Deployment", level: 70 },
+  { name: "PostgreSQL & Redis", level: 80 },
 ]
 
 const additionalSkills = [
-  "Docker & Kubernetes",
-  "AWS & Google Cloud",
-  "Git & GitHub Actions",
-  "Pinecone & Weaviate",
+  "Multi-LLM Orchestration",
+  "Vector Databases (pgvector)",
+  "REST API Development",
   "Hugging Face Transformers",
-  "Scikit-learn & Pandas",
-  "Redis & MongoDB",
-  "Prompt Engineering",
-  "RAG Systems",
+  "Deep Learning & Computer Vision (TensorFlow, PyTorch, OpenCV)",
+  "Git & Version Control",
+  "Data Engineering & ETL Pipelines",
   "MLOps & Model Deployment",
-  "REST & GraphQL APIs",
-  "Nginx & Load Balancing"
+  "Linux & Server Management",
+  "Scikit-learn & Pandas",
+  "Load Balancing & Nginx",
+  "Cloud Infrastructure (AWS)"
 ]
 
 export default function Skills() {

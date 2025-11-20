@@ -8,21 +8,30 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
+    const sections = ['home', 'services', 'projects', 'skills', 'experience', 'about', 'contact']
+
     const handleScroll = () => {
-      const sections = ['home', 'services', 'projects', 'skills', 'experience', 'about', 'contact']
-      const current = sections.find(section => {
+      const scrollPosition = window.scrollY + 120
+      let current = 'home'
+
+      for (const section of sections) {
         const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 150 && rect.bottom >= 150
+        if (!element) continue
+        const offsetTop = element.offsetTop
+        const offsetBottom = offsetTop + element.offsetHeight
+        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+          current = section
+          break
         }
-        return false
-      })
-      if (current) {
-        setActiveSection(current)
-      } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-        setActiveSection('contact')
       }
+
+      const docHeight = document.body.scrollHeight
+      const winHeight = window.innerHeight
+      if (window.scrollY + winHeight >= docHeight - 50) {
+        current = 'contact'
+      }
+
+      setActiveSection(current)
     }
 
     const smoothScroll = (e: Event) => {
@@ -32,15 +41,18 @@ export default function Header() {
         const element = document.querySelector<HTMLElement>(target.hash)
         if (element) {
           const offset = 80
-          const top = element.getBoundingClientRect().top + window.scrollY - offset
+          const top = element.offsetTop - offset
           window.scrollTo({ top, behavior: 'smooth' })
+          setActiveSection(target.hash.replace('#', ''))
         }
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     const links = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
     links.forEach((link) => link.addEventListener("click", smoothScroll))
+
+    handleScroll()
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -52,11 +64,12 @@ export default function Header() {
     const element = document.getElementById(sectionId)
     if (element) {
       const offset = 80
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY
+      const elementPosition = element.offsetTop
       window.scrollTo({
         top: elementPosition - offset,
         behavior: 'smooth'
       })
+      setActiveSection(sectionId)
     }
     setIsMenuOpen(false)
   }
