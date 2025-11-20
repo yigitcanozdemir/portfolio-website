@@ -9,10 +9,26 @@ import type React from "react"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Yiğit Can Özdemir - Freelance AI Engineer",
+  title: "Yiğit Can Özdemir | AI Engineer",
   description:
-    "Portfolio of Yiğit Can Özdemir, a professional Freelance AI Engineer specializing in AI/ML development, LLM integration, and intelligent automation systems.",
-  keywords: ['AI Engineer', 'Machine Learning', 'LLM Integration', 'AI Automation', 'Freelance AI Developer'],
+    "AI Engineer specializing in RAG, LLM integration, and agentic workflows. I help businesses deploy AI systems that work reliably in the real world. Open for freelance work.",
+  keywords: [
+    "Freelance AI Engineer",
+    "AI Engineer",
+    "LLM Developer",
+    "RAG Engineer",
+    "AI Developer",
+    "AI Solutions Developer",
+    "LLM Integration",
+    "Agentic AI Systems",
+    "Retrieval-Augmented Generation",
+    "Vector Databases",
+    "FastAPI Developer",
+    "Python AI Developer",
+    "AI Automation",
+    "AI for Business",
+    "Cloud AI Systems",
+  ],
   icons: {
     icon: [
       {

@@ -57,7 +57,7 @@ export default function ResumePage() {
                 </a>
                 <span>|</span>
                 <a href={contactLinks.portfolio} className="hover:underline">
-                  Portfolio
+                  Website
                 </a>
               </div>
             </div>
