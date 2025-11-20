@@ -2,7 +2,7 @@ export const contactLinks = {
   email: 'hello@yigitcanozdemir.com',
   linkedin: 'https://linkedin.com/in/yiğit-can-özdemir',
   github: 'https://github.com/yigitcanozdemir',
-  instagram: 'https://instagram.com/yigitcanozdemir',
+  portfolio: 'https://yigitcanozdemir.com',
   location: {
     label: 'Osmaniye, Turkey',
     mapUrl: 'https://www.google.com/maps?q=Osmaniye%2C+Turkey'
@@ -19,7 +19,7 @@ export type ProjectKey =
 
 export const projectDemoLinks: Record<ProjectKey, string> = {
   eCommerceAgent: 'https://app.yigitcanozdemir.com/',
-  cinesearch: 'https://demo-link.com',
+  cinesearch: 'https://cine-search-demo.vercel.app/',
 }
 
 export const imagePaths = {

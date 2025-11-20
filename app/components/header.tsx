@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Palette } from "lucide-react"
+import { useTheme } from "@/app/contexts/ThemeContext"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const sections = ['home', 'services', 'projects', 'skills', 'experience', 'about', 'contact']
@@ -87,7 +89,14 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/10">
       <nav className="container mx-auto px-6">
-        <div className="flex justify-center items-center h-20 sm:h-24">
+        <div className="flex justify-center items-center h-20 sm:h-24 relative">
+           <button
+            onClick={toggleTheme}
+            className="absolute left-0 p-2 rounded-lg text-tertiary hover:bg-white/5 transition-colors"
+            title={`Switch to ${theme === "turquoise" ? "brown" : "turquoise"} theme`}
+          >
+            <Palette className="w-5 h-5" />
+          </button>
           <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
               <a

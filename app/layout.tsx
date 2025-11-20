@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { ThemeProvider } from "@/app/contexts/ThemeContext"
 import './globals.css'
 import type React from "react"
 
@@ -39,9 +40,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-quaternary text-primary`}>
+      <ThemeProvider>
         {children}
         <Analytics />
         <SpeedInsights />
+      </ThemeProvider>
       </body>
     </html>
   )

@@ -3,7 +3,7 @@
 import { Download } from 'lucide-react'
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { imagePaths } from "@/data/externalLinks"
+import { imagePaths } from "@/app/data/externalLinks"
 import { sectionFadeProps, fadeInUp } from "@/lib/motionConfigs"
 
 export default function Hero() {
@@ -22,8 +22,7 @@ export default function Hero() {
               View my work
             </a>
             <a
-              href="/resume.pdf"
-              download
+              href="/resume"
               className="inline-flex items-center justify-center gap-2 bg-secondary text-tertiary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-tertiary hover:text-primary transition-all hover:shadow-lg border-2 border-tertiary"
             >
               <Download className="w-5 h-5" />

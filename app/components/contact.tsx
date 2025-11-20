@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Linkedin, Github, Instagram, MapPin, Phone, Send } from 'lucide-react'
+import { Mail, Linkedin, Github, MapPin, Phone, Send, Instagram } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { contactLinks } from '@/data/externalLinks'
+import { contactLinks } from '@/app/data/externalLinks'
 import { sectionFadeProps, fadeInUp } from '@/lib/motionConfigs'
 
 export default function Contact() {
@@ -40,10 +40,10 @@ export default function Contact() {
     },
     {
       label: 'Instagram',
-      sublabel: '@yigitcanozdemir',
+      sublabel: 'Coming soon',
       icon: Instagram,
-      href: contactLinks.instagram,
-      external: true,
+      href: undefined,
+      external: false,
     },
   ]
 
@@ -172,26 +172,41 @@ export default function Contact() {
                   <p className="text-sm text-tertiary/80">Choose the channel that suits you</p>
                 </div>
                 <div className="grid gap-3 md:grid-cols-1">
-                  {socialLinks.map(({ label, sublabel, icon: Icon, href, external }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target={external ? '_blank' : undefined}
-                      rel={external ? 'noopener noreferrer' : undefined}
-                      className="flex w-full items-center gap-4 bg-primary p-4 rounded-xl hover:bg-tertiary hover:text-primary transition-all group shadow-lg border border-white/5"
-                    >
-                      <Icon className="w-6 h-6 text-tertiary group-hover:text-primary transition-colors" />
-                      <div className="flex w-full items-center justify-between gap-3">
-                        <span className="font-semibold text-tertiary group-hover:text-primary">{label}</span>
-                        <span
-                          className="text-sm text-tertiary/80 group-hover:text-primary truncate text-right"
-                          title={sublabel}
-                        >
-                          {sublabel}
-                        </span>
+                  {socialLinks.map(({ label, sublabel, icon: Icon, href, external }) =>
+                    href ? (
+                      <a
+                        key={label}
+                        href={href}
+                        target={external ? '_blank' : undefined}
+                        rel={external ? 'noopener noreferrer' : undefined}
+                        className="flex w-full items-center gap-4 bg-primary p-4 rounded-xl hover:bg-tertiary hover:text-primary transition-all group shadow-lg border border-white/5"
+                      >
+                        <Icon className="w-6 h-6 text-tertiary group-hover:text-primary transition-colors" />
+                        <div className="flex w-full items-center justify-between gap-3">
+                          <span className="font-semibold text-tertiary group-hover:text-primary">{label}</span>
+                          <span
+                            className="text-sm text-tertiary/80 group-hover:text-primary truncate text-right"
+                            title={sublabel}
+                          >
+                            {sublabel}
+                          </span>
+                        </div>
+                      </a>
+                    ) : (
+                      <div
+                        key={label}
+                        className="flex w-full items-center gap-4 bg-primary p-4 rounded-xl border border-white/5"
+                      >
+                        <Icon className="w-6 h-6 text-tertiary" />
+                        <div className="flex w-full items-center justify-between gap-3">
+                          <span className="font-semibold text-tertiary">{label}</span>
+                          <span className="text-sm text-tertiary/80 truncate text-right" title={sublabel}>
+                            {sublabel}
+                          </span>
+                        </div>
                       </div>
-                    </a>
-                  ))}
+                    )
+                  )}
                 </div>
               </div>
               <div className="flex flex-col gap-4">

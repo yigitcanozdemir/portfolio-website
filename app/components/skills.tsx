@@ -1,33 +1,8 @@
 'use client'
 
 import { motion } from "framer-motion"
+import { coreSkills, additionalSkills } from "@/app/data/skillsData"
 import { sectionFadeProps, fadeInUp } from "@/lib/motionConfigs"
-
-const skills = [
-  { name: "Python", level: 95 },
-  { name: "LLM Integration (OpenAI, Anthropic)", level: 90 },
-  { name: "RAG Systems & Vector Search", level: 80 },
-  { name: "Agentic Workflow Design", level: 80 },
-  { name: "FastAPI & Backend Engineering", level: 80 },
-  { name: "Next.js & Frontend Delivery", level: 65 },
-  { name: "Docker & AWS Deployment", level: 70 },
-  { name: "PostgreSQL & Redis", level: 80 },
-]
-
-const additionalSkills = [
-  "Multi-LLM Orchestration",
-  "Vector Databases (pgvector)",
-  "REST API Development",
-  "Hugging Face Transformers",
-  "Deep Learning & Computer Vision (TensorFlow, PyTorch, OpenCV)",
-  "Git & Version Control",
-  "Data Engineering & ETL Pipelines",
-  "MLOps & Model Deployment",
-  "Linux & Server Management",
-  "Scikit-learn & Pandas",
-  "Load Balancing & Nginx",
-  "Cloud Infrastructure (AWS)"
-]
 
 export default function Skills() {
   return (
@@ -37,11 +12,10 @@ export default function Skills() {
           My Skills
         </motion.h2>
         
-        {/* Core Skills with Progress Bars */}
         <motion.div className="max-w-5xl mx-auto mb-16" {...fadeInUp(0.1)}>
           <h3 className="text-2xl font-bold mb-8 text-center">Core Expertise</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
+            {coreSkills.map((skill, index) => (
               <motion.div key={index} className="mb-2" {...fadeInUp(index * 0.05)}>
                 <div className="flex justify-between mb-2">
                   <span className="font-semibold text-lg">{skill.name}</span>

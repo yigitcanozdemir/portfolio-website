@@ -2,30 +2,17 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { projectDemoLinks, imagePaths } from "@/data/externalLinks"
+import { imagePaths } from "@/app/data/externalLinks"
+import { projects } from "@/app/data/projectsData"
 import { sectionFadeProps, fadeInUp } from "@/lib/motionConfigs"
-
-const projects = [
-  {
-    title: "AI Chat Assistant",
-    description:
-      "Enterprise-grade conversational AI platform with multi-modal capabilities and real-time streaming.",
-    image: imagePaths.eCommerceAgent,
-    demoUrl: projectDemoLinks.eCommerceAgent,
-    tags: ["OpenAI", "Next.js", "TypeScript", "Vercel AI SDK"],
-  },
-  {
-    title: "Document Intelligence System",
-    description: "Automated document processing and analysis using vision models and natural language understanding.",
-    image: imagePaths.cinesearch,
-    demoUrl: projectDemoLinks.cinesearch,
-    tags: ["GPT-4V", "Python", "FastAPI", "PostgreSQL"],
-  },
-]
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 bg-[#dff2f2] scroll-mt-20">
+    <section
+      id="projects"
+      className="py-16 bg-[rgb(249,245,240)] scroll-mt-20"
+      style={{ backgroundColor: "color-mix(in srgb, var(--quaternary) 70%, var(--tertiary) 5%)" }}
+    >
       <motion.div {...sectionFadeProps} className="container mx-auto px-6">
         <motion.h2 className="text-3xl font-bold mb-12 text-center text-primary" {...fadeInUp()}>
           My Projects
