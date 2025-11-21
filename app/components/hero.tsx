@@ -54,6 +54,7 @@ export default function Hero() {
             width={500}
             height={500}
             className="rounded-2xl mx-auto object-cover shadow-2xl w-full max-w-[260px] sm:max-w-[380px] md:max-w-[500px]"
+            sizes="(min-width: 1024px) 500px, (min-width: 768px) 380px, 90vw"
             priority
           />
         </motion.div>

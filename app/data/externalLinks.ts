@@ -19,7 +19,7 @@ export type ProjectKey =
 
 export const projectDemoLinks: Record<ProjectKey, string> = {
   eCommerceAgent: 'https://app.yigitcanozdemir.com/',
-  cinesearch: 'https://cine-search-demo.vercel.app/',
+  cinesearch: 'https://cinesearch.yigitcanozdemir.com/',
 }
 
 export const imagePaths = {

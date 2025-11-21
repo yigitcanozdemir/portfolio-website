@@ -67,7 +67,7 @@ export default function ResumePage() {
                 alt="Yiğit Can Özdemir portrait"
                 fill
                 className="object-cover"
-                sizes="128px"
+                sizes="(min-width: 1024px) 132px, (min-width: 768px) 128px, 112px"
                 priority
               />
             </div>
