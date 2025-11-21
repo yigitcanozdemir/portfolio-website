@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
     location: "Remote",
     achievements: [
       "Designed and delivered production-ready RAG pipelines using Redis, PostgreSQL, and pgvector",
-      "Built multi-step agentic workflows and integrated LLMs (OpenAI, Claude, and local models) into backend systems",
+      "Built multi-step agentic workflows and orchestrated LLMs (OpenAI, Claude, and local models) within backend systems",
       "Developed FastAPI-based microservices and orchestration layers for AI-powered automation",
       "Containerized and deployed applications on AWS using Docker with strong observability and monitoring practices",
       "Created lightweight, functional Next.js interfaces for internal tools and end-to-end product delivery",

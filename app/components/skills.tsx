@@ -5,6 +5,13 @@ import { coreSkills, additionalSkills } from "@/app/data/skillsData"
 import { sectionFadeProps, fadeInUp } from "@/lib/motionConfigs"
 
 export default function Skills() {
+  const levelLabel = (level: number) => {
+    if (level >= 90) return "Expert"
+    if (level >= 70) return "Advanced"
+    if (level >= 50) return "Intermediate"
+    return "Familiar"
+  }
+
   return (
     <section id="skills" className="py-24 bg-tertiary text-primary scroll-mt-20">
       <motion.div {...sectionFadeProps} className="container mx-auto px-6">
@@ -19,7 +26,7 @@ export default function Skills() {
               <motion.div key={index} className="mb-2" {...fadeInUp(index * 0.05)}>
                 <div className="flex justify-between mb-2">
                   <span className="font-semibold text-lg">{skill.name}</span>
-                  <span className="font-medium">{skill.level}%</span>
+                  <span className="font-medium text-primary/80">{levelLabel(skill.level)}</span>
                 </div>
                 <div className="w-full bg-primary/30 rounded-full h-3 overflow-hidden">
                   <motion.div

@@ -10,23 +10,23 @@ export default function Services() {
       icon: <Bot className="w-8 h-8" />,
       title: "RAG & LLM Systems",
       description:
-        "AI that works in the real world. I build robust retrieval and multi-model workflows that integrate reliably into production systems.",
+        "Production-ready retrieval and LLM workflows designed to behave predictably, scale reliably, and support real operational use.",
       features: [
         "RAG pipelines using Redis, PostgreSQL & pgvector",
-        "Multi-step agentic flows with structured control",
-        "Custom evaluation & observability for LLM behavior",
-        "LLM integration for internal workflows & automation"
+        "Agentic, multi-step workflows with structured orchestration",
+        "Custom evaluation and observability for LLM behavior",
+        "LLM orchestration for internal tools and automation"
       ]
     },
     {
       icon: <Workflow className="w-8 h-8" />,
       title: "Agentic Automation",
       description:
-        "End-to-end agent systems that coordinate multiple LLM calls, tools, APIs, and business logic with deterministic guardrails.",
+        "Agent systems that coordinate LLM calls, tools, APIs, and business logic with deterministic guardrails for reliable automation.",
       features: [
-        "Multi-LLM orchestrations with fallbacks",
+        "Multi-LLM orchestration with fallbacks",
         "Tool-using agent architectures",
-        "Task routing, memory & workflow management",
+        "Task routing, memory, and workflow management",
         "Error-handled, production-safe execution layers"
       ]
     },
@@ -34,11 +34,11 @@ export default function Services() {
       icon: <Server className="w-8 h-8" />,
       title: "Backend & API Engineering",
       description:
-        "Fast, stable backend services engineered for AI workloads, designed to run reliably in production environments.",
+        "Fast, stable backend services engineered for AI workloads and built to run reliably in production.",
       features: [
-        "FastAPI microservices for AI workloads",
-        "LLM-serving endpoints",
-        "Authentication, rate limiting & monitoring",
+        "FastAPI microservices for AI and automation",
+        "LLM-serving and orchestration endpoints",
+        "Authentication, rate limiting, and monitoring",
         "AWS-ready Dockerized deployments"
       ]
     },
@@ -46,23 +46,23 @@ export default function Services() {
       icon: <MonitorSmartphone className="w-8 h-8" />,
       title: "Frontend Development",
       description:
-        "Modern, clean Next.js interfaces for AI products, dashboards, internal tools, and end-user applications.",
+        "Modern Next.js interfaces for AI products, dashboards, and internal tools.",
       features: [
-        "Next.js dashboards & admin panels",
-        "Full-stack AI app delivery",
-        "API integration with LLM/RAG systems",
+        "Next.js dashboards and admin panels",
+        "Full-stack AI application delivery",
+        "API integration with LLM/RAG services",
         "Responsive UI with smooth UX"
       ]
     },
     {
       icon: <Brain className="w-8 h-8" />,
-      title: "AI/ML Development",
+      title: "AI / ML Development",
       description:
-        "ML models and pipelines tailored for real-world environments, using robust engineering and validation practices.",
+        "ML models and pipelines built for real-world conditions using solid engineering and validation practices.",
       features: [
         "Predictive modeling (regression, classification, LSTM)",
-        "Computer vision tools with OpenCV",
-        "Real-world data preprocessing & cleaning",
+        "Computer vision tools using OpenCV",
+        "Real-world data preprocessing and cleaning",
         "Deployment-ready ML pipelines"
       ]
     },
@@ -70,12 +70,12 @@ export default function Services() {
       icon: <Cloud className="w-8 h-8" />,
       title: "Cloud Deployment",
       description:
-        "Reliable production deployments built for performance, stability, and maintainability.",
+        "Production deployments designed for stability, observability, and smooth scaling.",
       features: [
         "AWS deployment with Docker",
-        "Container orchestration",
-        "Load balancing & environment setup",
-        "CI/CD with GitHub Actions"
+        "Container orchestration and environment setup",
+        "Load balancing and performance tuning",
+        "CI/CD workflows with GitHub Actions"
       ]
     }
   ]

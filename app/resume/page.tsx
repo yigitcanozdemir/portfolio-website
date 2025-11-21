@@ -104,11 +104,11 @@ export default function ResumePage() {
                       {`${exp.period} • ${exp.location}`}
                     </span>
                   </div>
-                  <ul className="list-disc list-inside space-y-1.5 text-gray-700 ml-4 marker:text-[#5c4731]">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={achievement + i}>{achievement}</li>
-                    ))}
-                  </ul>
+                <ul className="list-disc list-inside space-y-1.5 text-gray-700 ml-4 marker:text-[#5c4731]">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={achievement + i}>{achievement}</li>
+                  ))}
+                </ul>
                 </div>
               ))}
             </div>
