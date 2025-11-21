@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Yiğit Can Özdemir | AI Engineer",
   description:
-    "AI Engineer specializing in RAG, LLM integration, and agentic workflows. I help businesses deploy AI systems that work reliably in the real world. Open for freelance work.",
+    "AI Engineer building practical AI systems that actually work in the real world. I work with RAG pipelines, LLMs, and agentic workflows, helping businesses bring AI into real operations. Open to freelance projects.",
   keywords: [
     "Freelance AI Engineer",
     "AI Engineer",
@@ -31,23 +31,11 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/runic_y.svg', type: 'image/svg+xml' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/runic_y.svg',
   },
 }
-
 export default function RootLayout({
   children,
 }: {
