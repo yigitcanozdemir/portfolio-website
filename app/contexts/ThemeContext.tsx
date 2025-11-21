@@ -11,16 +11,22 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") return "brown"
+  try {
+    const saved = sessionStorage.getItem("portfolio-theme") as Theme | null
+    return saved || "brown"
+  } catch {
+    return "brown"
+  }
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "brown"
-    const savedTheme = localStorage.getItem("portfolio-theme") as Theme
-    return savedTheme ?? "brown"
-  })
+  const [theme, setTheme] = useState<Theme>(getInitialTheme)
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme)
-    localStorage.setItem("portfolio-theme", theme)
+    sessionStorage.setItem("portfolio-theme", theme)
   }, [theme])
 
   const toggleTheme = () => {

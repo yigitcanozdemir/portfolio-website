@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     shortcut: ['/favicon.ico'],
   },
   manifest: '/site.webmanifest',
+}
+
+export const viewport: Viewport = {
   themeColor: '#ffffff',
 }
 export default function RootLayout({
@@ -49,6 +52,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning data-darkreader-ignore>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=sessionStorage.getItem('portfolio-theme')||'brown';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
         <meta name="color-scheme" content="light" />
       </head>
       <body className={`${inter.className} bg-quaternary text-primary`} data-darkreader-ignore>

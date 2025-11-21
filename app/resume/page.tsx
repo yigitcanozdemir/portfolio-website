@@ -7,16 +7,8 @@ import { contactLinks, imagePaths } from "../data/externalLinks"
 import { experiences } from "../data/experiences"
 import { projects } from "../data/projectsData"
 import { additionalSkills, coreSkills } from "../data/skillsData"
-import { useTheme } from "../contexts/ThemeContext"
 
 export default function ResumePage() {
-  const { theme } = useTheme()
-  const headerBg = theme === "turquoise" ? "#0d3d3d" : "#3d2e1f"
-  const headingColor = theme === "turquoise" ? "text-[#0d3d3d]" : "text-[#3d2e1f]"
-  const accentColor = theme === "turquoise" ? "#1a5c5c" : "#5c4731"
-  const badgeBg = theme === "turquoise" ? "#e3f0ed" : "#f7f1e8"
-  const badgeBorder = theme === "turquoise" ? "#c4ded9" : "#e5ddd0"
-
   const handleDownload = () => {
     window.print()
   }
@@ -36,10 +28,7 @@ export default function ResumePage() {
 
         <div className="bg-white shadow-lg print:shadow-none resume-container" id="resume">
           {/* Header */}
-          <div
-            className="text-white p-7 md:p-8 print:p-5 resume-header flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between print:flex-row print:items-center print:justify-between print:gap-6"
-            style={{ backgroundColor: headerBg }}
-          >
+          <div className="bg-primary text-white p-7 md:p-8 print:p-5 resume-header flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between print:flex-row print:items-center print:justify-between print:gap-6">
             <div className="min-w-0">
               <h1 className="text-4xl font-bold mb-2">Yiğit Can Özdemir</h1>
               <p className="text-xl mb-4">AI Engineer</p>
@@ -75,7 +64,7 @@ export default function ResumePage() {
 
           {/* About */}
           <div className="p-7 md:p-8 print:p-5 border-b border-gray-200 resume-section space-y-3">
-            <h2 className={`text-2xl font-bold ${headingColor}`}>
+            <h2 className="text-2xl font-bold text-primary">
               About Me
             </h2>
             <div className="space-y-3">
@@ -89,7 +78,7 @@ export default function ResumePage() {
 
           {/* Experience */}
           <div className="p-7 md:p-8 print:p-5 border-b border-gray-200 resume-section space-y-4">
-            <h2 className={`text-2xl font-bold ${headingColor} resume-section-title`}>
+            <h2 className="text-2xl font-bold text-primary resume-section-title">
               Experience
             </h2>
             <div className="space-y-4 experience-list">
@@ -98,13 +87,13 @@ export default function ResumePage() {
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-xl font-semibold">{exp.title}</h3>
-                      <p className={`${theme === "turquoise" ? "text-[#1a5c5c]" : "text-[#5c4731]"}`}>{exp.company}</p>
+                      <p className="text-secondary">{exp.company}</p>
                     </div>
-                    <span className="text-sm font-medium sm:text-right" style={{ color: accentColor }}>
+                    <span className="text-sm font-medium sm:text-right text-secondary">
                       {`${exp.period} • ${exp.location}`}
                     </span>
                   </div>
-                <ul className="list-disc list-inside space-y-1.5 text-gray-700 ml-4 marker:text-[#5c4731]">
+                <ul className="list-disc list-inside space-y-1.5 text-gray-700 ml-4 marker:text-secondary">
                   {exp.achievements.map((achievement, i) => (
                     <li key={achievement + i}>{achievement}</li>
                   ))}
@@ -116,20 +105,19 @@ export default function ResumePage() {
 
           {/* Skills */}
           <div className="p-7 md:p-8 print:p-5 border-b border-gray-200 resume-section space-y-3">
-            <h2 className={`text-2xl font-bold ${headingColor} resume-section-title`}>
+            <h2 className="text-2xl font-bold text-primary resume-section-title">
               Technical Skills
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <h3 className="font-medium" style={{ color: accentColor }}>
+                <h3 className="font-medium text-secondary">
                   Core
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {coreSkills.map((skill) => (
                     <span
                       key={skill.name}
-                      className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] leading-tight"
-                      style={{ color: accentColor, backgroundColor: badgeBg, borderColor: badgeBorder, borderWidth: 1, borderStyle: "solid" }}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] leading-tight text-secondary bg-quaternary border border-tertiary"
                     >
                       {skill.name}
                     </span>
@@ -137,15 +125,14 @@ export default function ResumePage() {
                 </div>
               </div>
               <div className="space-y-2">
-                <h3 className="font-medium" style={{ color: accentColor }}>
+                <h3 className="font-medium text-secondary">
                   Additional
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {additionalSkills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] leading-tight"
-                      style={{ color: accentColor, backgroundColor: badgeBg, borderColor: badgeBorder, borderWidth: 1, borderStyle: "solid" }}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] leading-tight text-secondary bg-quaternary border border-tertiary"
                     >
                       {skill}
                     </span>
@@ -157,13 +144,13 @@ export default function ResumePage() {
 
           {/* Projects */}
           <div className="p-7 md:p-8 print:p-5 border-b border-gray-200 resume-section space-y-3">
-            <h2 className={`text-2xl font-bold ${headingColor} resume-section-title`}>
+            <h2 className="text-2xl font-bold text-primary resume-section-title">
               Featured Projects
             </h2>
             <div className="space-y-3">
               {projects.map((project, idx) => (
                 <div key={project.title + idx} className="resume-item space-y-1">
-                  <h3 className="text-lg font-semibold" style={{ color: accentColor }}>
+                  <h3 className="text-lg font-semibold text-secondary">
                     {project.title}
                   </h3>
                   <p className="text-gray-700">{project.description}</p>
@@ -172,8 +159,7 @@ export default function ResumePage() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="inline-flex items-center rounded-full px-[7px] py-[3px] text-[9.5px] leading-tight font-medium"
-                          style={{ color: accentColor, backgroundColor: badgeBg, borderColor: badgeBorder, borderWidth: 1, borderStyle: "solid" }}
+                          className="inline-flex items-center rounded-full px-[7px] py-[3px] text-[9.5px] leading-tight font-medium text-secondary bg-quaternary border border-tertiary"
                         >
                           {tag}
                         </span>
@@ -181,7 +167,7 @@ export default function ResumePage() {
                     </div>
                   )}
                   {project.demoUrl && (
-                    <a href={project.demoUrl} className="text-sm" style={{ color: accentColor }}>
+                    <a href={project.demoUrl} className="text-sm text-secondary hover:underline">
                       Live demo
                     </a>
                   )}
@@ -272,7 +258,7 @@ export default function ResumePage() {
           }
 
           .resume-header {
-            background-color: ${headerBg} !important;
+            background-color: var(--primary) !important;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
           }

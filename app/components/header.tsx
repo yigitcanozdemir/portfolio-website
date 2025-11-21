@@ -7,7 +7,7 @@ import { useTheme } from "@/app/contexts/ThemeContext"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
-  const { theme, toggleTheme } = useTheme()
+  const { toggleTheme } = useTheme()
 
   useEffect(() => {
     const sections = ['home', 'services', 'projects', 'skills', 'experience', 'about', 'contact']
@@ -93,7 +93,7 @@ export default function Header() {
            <button
             onClick={toggleTheme}
             className="absolute left-0 p-2 rounded-lg text-tertiary hover:bg-white/5 transition-colors"
-            title={`Switch to ${theme === "turquoise" ? "brown" : "turquoise"} theme`}
+            aria-label="Toggle theme"
           >
             <Palette className="w-5 h-5" />
           </button>
