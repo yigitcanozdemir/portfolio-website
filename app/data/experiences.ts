@@ -42,7 +42,7 @@ export const experiences: Experience[] = [
     location: "Osmaniye, Türkiye",
     achievements: [
       "Developed predictive maintenance models using TensorFlow (regression & LSTM) on vibration and time-series sensor data",
-      "Built and deployed a Flask-based dashboard to visualize real-time machine predictions vs actual performance",
+      "Built and deployed a Flask-based dashboard to visualize machine predictions vs actual performance",
       "Created OpenCV-based steel width measurement tooling for production-line monitoring and quality control",
       "Implemented deep learning pipelines using TensorFlow and Python for operational use cases in the rolling mill",
       "Collaborated closely with production engineers to validate results and align solutions with real-world operational constraints",
