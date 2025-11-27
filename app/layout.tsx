@@ -7,11 +7,18 @@ import './globals.css'
 import type React from "react"
 
 const inter = Inter({ subsets: ["latin"] })
+const baseUrl = "https://yigitcanozdemir.com"
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: "/",
+  },
+  applicationName: "Yiğit Can Özdemir | AI Engineer",
+  authors: [{ name: "Yiğit Can Özdemir", url: baseUrl }],
   title: "Yiğit Can Özdemir | AI Engineer",
   description:
-    "AI Engineer building practical AI systems that actually work in the real world. I work with RAG pipelines, LLMs, and agentic workflows, helping businesses bring AI into real operations. Open to freelance projects.",
+    "AI engineer building AI systems that work in the real world—RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
   keywords: [
     "Freelance AI Engineer",
     "AI Engineer",
@@ -39,6 +46,34 @@ export const metadata: Metadata = {
     shortcut: ['/favicon.ico'],
   },
   manifest: '/site.webmanifest',
+  openGraph: {
+    type: "website",
+    url: baseUrl,
+    siteName: "Yiğit Can Özdemir",
+    title: "Yiğit Can Özdemir | AI Engineer",
+    description:
+      "AI engineer building AI systems that work in the real world—RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+    images: [
+      {
+        url: `${baseUrl}/portrait.png`,
+        width: 1024,
+        height: 1024,
+        alt: "Yiğit Can Özdemir portrait",
+      },
+    ],
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yiğit Can Özdemir | AI Engineer",
+    description:
+      "AI engineer building AI systems that work in the real world—RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+    images: [`${baseUrl}/portrait.png`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export const viewport: Viewport = {
@@ -55,6 +90,42 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=sessionStorage.getItem('portfolio-theme')||'brown';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              url: baseUrl,
+              name: "Yiğit Can Özdemir | AI Engineer",
+              description:
+                "AI engineer building AI systems that work in the real world—RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+              inLanguage: "en",
+              sameAs: [
+                "https://github.com/yigitcanozdemir",
+                "https://linkedin.com/in/yiğit-can-özdemir",
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Yiğit Can Özdemir",
+              jobTitle: "AI Engineer",
+              url: baseUrl,
+              image: `${baseUrl}/portrait.png`,
+              sameAs: [
+                "https://github.com/yigitcanozdemir",
+                "https://linkedin.com/in/yiğit-can-özdemir",
+                "https://yigitcanozdemir.com",
+              ],
+            }),
           }}
         />
         <meta name="color-scheme" content="light" />
