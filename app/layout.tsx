@@ -7,7 +7,7 @@ import './globals.css'
 import type React from "react"
 
 const inter = Inter({ subsets: ["latin"] })
-const baseUrl = "https://yigitcanozdemir.com"
+const baseUrl = "https://www.yigitcanozdemir.com"
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -121,7 +121,7 @@ export default function RootLayout({
               sameAs: [
                 "https://github.com/yigitcanozdemir",
                 "https://linkedin.com/in/yiğit-can-özdemir",
-                "https://yigitcanozdemir.com",
+                "https://www.yigitcanozdemir.com",
               ],
             }),
           }}

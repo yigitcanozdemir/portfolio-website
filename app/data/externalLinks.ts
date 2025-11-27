@@ -2,7 +2,7 @@ export const contactLinks = {
   email: 'hello@yigitcanozdemir.com',
   linkedin: 'https://linkedin.com/in/yiğit-can-özdemir',
   github: 'https://github.com/yigitcanozdemir',
-  portfolio: 'https://yigitcanozdemir.com',
+  portfolio: 'https://www.yigitcanozdemir.com',
   location: {
     label: 'Osmaniye, Turkey',
     mapUrl: 'https://www.google.com/maps?q=Osmaniye%2C+Turkey'

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
-const baseUrl = "https://yigitcanozdemir.com"
+const baseUrl = "https://www.yigitcanozdemir.com"
 
 export const metadata: Metadata = {
   title: "Resume | Yiğit Can Özdemir",

@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 export function GET() {
   const urls = [
     {
-      loc: "https://yigitcanozdemir.com/",
+      loc: "https://www.yigitcanozdemir.com/",
       changefreq: "weekly",
       priority: "1.0",
       lastmod: new Date().toISOString().split("T")[0],
     },
     {
-      loc: "https://yigitcanozdemir.com/resume",
+      loc: "https://www.yigitcanozdemir.com/resume",
       changefreq: "weekly",
       priority: "0.8",
       lastmod: new Date().toISOString().split("T")[0],
