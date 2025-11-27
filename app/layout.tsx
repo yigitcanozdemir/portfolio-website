@@ -11,9 +11,7 @@ const baseUrl = "https://yigitcanozdemir.com"
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: baseUrl },
   applicationName: "Yiğit Can Özdemir | AI Engineer",
   authors: [{ name: "Yiğit Can Özdemir", url: baseUrl }],
   title: "Yiğit Can Özdemir | AI Engineer",

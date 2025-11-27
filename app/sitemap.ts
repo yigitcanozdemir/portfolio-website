@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next"
 const baseUrl = "https://yigitcanozdemir.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date().toISOString()
+  const lastModified = new Date().toISOString().split("T")[0];
 
   const paths = ["/", "/resume"]
 
