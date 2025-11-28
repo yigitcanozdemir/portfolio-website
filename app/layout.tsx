@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Yiğit Can Özdemir", url: baseUrl }],
   title: "Yiğit Can Özdemir | AI Engineer",
   description:
-    "AI engineer building AI systems that work in the real world RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+    "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
   keywords: [
     "Freelance AI Engineer",
     "AI Consultant",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Yiğit Can Özdemir",
     title: "Yiğit Can Özdemir | AI Engineer",
     description:
-      "AI engineer building AI systems that work in the real world RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+      "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
     images: [
       {
         url: `${baseUrl}/portrait.png`,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Yiğit Can Özdemir | AI Engineer",
     description:
-      "AI engineer building AI systems that work in the real world RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+      "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
     images: [`${baseUrl}/portrait.png`],
   },
   robots: {
@@ -101,7 +101,7 @@ export default function RootLayout({
               url: baseUrl,
               name: "Yiğit Can Özdemir | AI Engineer",
               description:
-                "AI engineer building AI systems that work in the real world RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+                "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
               inLanguage: "en",
               sameAs: [
                 "https://github.com/yigitcanozdemir",

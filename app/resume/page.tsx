@@ -23,7 +23,7 @@ export default function ResumePage() {
             "@type": "CreativeWork",
             name: "Yiğit Can Özdemir - Resume",
             description:
-              "AI engineer building AI systems that work in the real world RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+              "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
             url: "https://yigitcanozdemir.com/resume",
             creator: {
               "@type": "Person",
