@@ -77,8 +77,8 @@ export default function Header() {
   }
 
   type NavItem =
-    | { id: string; label: string; type: 'section' }
-    | { id: string; label: string; type: 'link'; href: string }
+    | { id: string; label: string; type: 'section'; hidden?: boolean }
+    | { id: string; label: string; type: 'link'; href: string; hidden?: boolean }
 
   const navItems: NavItem[] = [
     { id: 'home', label: 'Home', type: 'section' },
@@ -88,6 +88,7 @@ export default function Header() {
     { id: 'experience', label: 'Experience', type: 'section' },
     { id: 'about', label: 'About', type: 'section' },
     { id: 'contact', label: 'Contact', type: 'section' },
+    { id: 'resume', label: 'Resume', type: 'link', href: '/resume', hidden: true },
   ]
 
   return (
@@ -107,7 +108,7 @@ export default function Header() {
                 <a
                   key={item.id}
                   href={item.href}
-                  className="px-5 py-2 rounded-lg text-base font-medium text-tertiary/70 hover:text-tertiary hover:bg-white/5 transition-colors"
+                  className={`px-5 py-2 rounded-lg text-base font-medium text-tertiary/70 hover:text-tertiary hover:bg-white/5 transition-colors ${item.hidden ? 'sr-only focus:not-sr-only' : ''}`}
                 >
                   {item.label}
                 </a>
@@ -119,7 +120,7 @@ export default function Header() {
                     activeSection === item.id
                       ? 'text-tertiary bg-white/10'
                       : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
-                  }`}
+                  } ${item.hidden ? 'sr-only focus:not-sr-only' : ''}`}
                 >
                   {item.label}
                 </a>
@@ -142,7 +143,7 @@ export default function Header() {
                 <a
                   key={item.id}
                   href={item.href}
-                  className="block w-full text-center px-4 py-3 rounded-lg text-base font-medium text-tertiary/70 hover:text-tertiary hover:bg-white/5 transition-colors"
+                  className={`block w-full text-center px-4 py-3 rounded-lg text-base font-medium text-tertiary/70 hover:text-tertiary hover:bg-white/5 transition-colors ${item.hidden ? 'sr-only focus:not-sr-only' : ''}`}
                 >
                   {item.label}
                 </a>
@@ -154,7 +155,7 @@ export default function Header() {
                     activeSection === item.id
                       ? 'text-tertiary bg-white/10'
                       : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
-                  }`}
+                  } ${item.hidden ? 'sr-only focus:not-sr-only' : ''}`}
                 >
                   {item.label}
                 </button>

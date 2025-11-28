@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Script from "next/script"
 import { Download } from "lucide-react"
 import { aboutParagraphs } from "../data/about"
 import { contactLinks, imagePaths } from "../data/externalLinks"
@@ -15,6 +16,31 @@ export default function ResumePage() {
 
   return (
     <div className="resume-page min-h-screen bg-quaternary py-12 print:py-0">
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.yigitcanozdemir.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Resume",
+                item: "https://www.yigitcanozdemir.com/resume",
+              },
+            ],
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
