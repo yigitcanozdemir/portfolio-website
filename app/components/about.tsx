@@ -21,6 +21,8 @@ export default function About() {
               width={400}
               height={400}
               className="rounded-lg mx-auto object-cover"
+              sizes="(min-width: 1024px) 320px, (min-width: 768px) 260px, 80vw"
+              loading="lazy"
             />
           </motion.div>
           <motion.div className="md:w-2/3 md:pl-12 space-y-4" {...fadeInUp(0.15)}>

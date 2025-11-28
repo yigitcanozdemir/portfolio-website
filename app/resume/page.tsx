@@ -15,6 +15,30 @@ export default function ResumePage() {
 
   return (
     <div className="resume-page min-h-screen bg-quaternary py-12 print:py-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: "Yiğit Can Özdemir - Resume",
+            description:
+              "AI engineer building AI systems that work in the real world—RAG, LLM, and agentic workflows that ship for businesses. Open to freelance projects.",
+            url: "https://yigitcanozdemir.com/resume",
+            creator: {
+              "@type": "Person",
+              name: "Yiğit Can Özdemir",
+              jobTitle: "AI Engineer",
+              sameAs: [
+                "https://github.com/yigitcanozdemir",
+                "https://linkedin.com/in/yiğit-can-özdemir",
+                "https://yigitcanozdemir.com",
+              ],
+            },
+            inLanguage: "en",
+          }),
+        }}
+      />
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="mb-8 print:hidden">
           <button

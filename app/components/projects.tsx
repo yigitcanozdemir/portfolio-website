@@ -25,7 +25,14 @@ export default function Projects() {
               {...fadeInUp(index * 0.1)}
             >
               <div className="relative h-44">
-                <Image src={project.image || imagePaths.projectPlaceholder} alt={project.title} fill className="object-cover" />
+                <Image
+                  src={project.image || imagePaths.projectPlaceholder}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 380px, (min-width: 768px) 320px, 100vw"
+                  loading="lazy"
+                />
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-semibold mb-2 text-primary">{project.title}</h3>

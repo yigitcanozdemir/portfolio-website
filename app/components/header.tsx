@@ -77,13 +77,13 @@ export default function Header() {
   }
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', label: 'Home', type: 'section' },
+    { id: 'services', label: 'Services', type: 'section' },
+    { id: 'projects', label: 'Projects', type: 'section' },
+    { id: 'skills', label: 'Skills', type: 'section' },
+    { id: 'experience', label: 'Experience', type: 'section' },
+    { id: 'about', label: 'About', type: 'section' },
+    { id: 'contact', label: 'Contact', type: 'section' },
   ]
 
   return (
@@ -99,17 +99,27 @@ export default function Header() {
           </button>
           <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className={`px-5 py-2 rounded-lg text-base font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-tertiary bg-white/10'
-                    : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
-                }`}
-              >
-                {item.label}
-              </a>
+              item.type === 'link' ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="px-5 py-2 rounded-lg text-base font-medium text-tertiary/70 hover:text-tertiary hover:bg-white/5 transition-colors"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-5 py-2 rounded-lg text-base font-medium transition-colors ${
+                    activeSection === item.id
+                      ? 'text-tertiary bg-white/10'
+                      : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              )
             ))}
           </div>
           <button
@@ -124,17 +134,27 @@ export default function Header() {
         <div className="md:hidden bg-primary/95 backdrop-blur-sm border-b border-white/10">
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-center px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-tertiary bg-white/10'
-                    : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
-                }`}
-              >
-                {item.label}
-              </button>
+              item.type === 'link' ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="block w-full text-center px-4 py-3 rounded-lg text-base font-medium text-tertiary/70 hover:text-tertiary hover:bg-white/5 transition-colors"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`block w-full text-center px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                    activeSection === item.id
+                      ? 'text-tertiary bg-white/10'
+                      : 'text-tertiary/70 hover:text-tertiary hover:bg-white/5'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </div>
         </div>
