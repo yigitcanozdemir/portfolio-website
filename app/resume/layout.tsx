@@ -6,7 +6,7 @@ const baseUrl = "https://www.yigitcanozdemir.com"
 export const metadata: Metadata = {
   title: "Resume | Yiğit Can Özdemir",
   description:
-    "Download the resume of Yiğit Can Özdemir, AI Engineer focused on RAG pipelines, LLMs, and agentic workflows that ship.",
+    "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
   alternates: {
     canonical: "/resume",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: `${baseUrl}/resume`,
     title: "Resume | Yiğit Can Özdemir",
     description:
-      "Experience, projects, and skills of AI Engineer Yiğit Can Özdemir.",
+      "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
     images: [
       {
         url: `${baseUrl}/portrait.png`,
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Resume | Yiğit Can Özdemir",
     description:
-      "Experience, projects, and skills of AI Engineer Yiğit Can Özdemir.",
+      "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
     images: [`${baseUrl}/portrait.png`],
   },
 }

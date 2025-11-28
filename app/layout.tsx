@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Yiğit Can Özdemir | AI Engineer",
     description:
       "AI engineer building AI systems that work in the real world. RAG, LLM, and agentic workflows that power your businesses. Open to freelance projects.",
