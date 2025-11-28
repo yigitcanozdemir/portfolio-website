@@ -76,7 +76,11 @@ export default function Header() {
     setIsMenuOpen(false)
   }
 
-  const navItems = [
+  type NavItem =
+    | { id: string; label: string; type: 'section' }
+    | { id: string; label: string; type: 'link'; href: string }
+
+  const navItems: NavItem[] = [
     { id: 'home', label: 'Home', type: 'section' },
     { id: 'services', label: 'Services', type: 'section' },
     { id: 'projects', label: 'Projects', type: 'section' },
